@@ -1,3 +1,5 @@
+
+
 import mysql.connector
 def connect_db():
     try:
@@ -5,7 +7,9 @@ def connect_db():
             host='localhost',
             user='root',
             password='root',
-            database='department'
+            database='practise',
+            auth_plugin='mysql_native_password'  # Ensure correct authentication
+
         )
         print('Mysql connected Succesfully')
         return connection
@@ -130,7 +134,7 @@ def main():
     connection=connect_db()
     if not connection:
         return None
-    # create_table(connection)
+    create_table(connection)
     # inserting_data(connection)
     # updating_data(connection)
     # deleting_data(connection)
